@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+  window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+</script>
+<style>
+*{
+  margin: 0px;
+  text-decoration: none;
+}
+.ak_header{
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.footer-distributed{
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Comic Sans MS';
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  #5383d3;
+}
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  #5383d3;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+}
+
+.cont {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.item:hover .image{
+  opacity: 0.8;
+}
+
+.cont:hover .overlay {
+  opacity: 1;
+  margin-top: 20px;
+}
+.cont:hover .image {
+  opacity: 0.8;
+}
+
+.text {
+  color: #05f1e8ab;
+  font-size: 35px;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text2{
+  opacity : 0;
+  font-size: 20px;
+  position: absolute;
+  color: red;
+}
+
+.itemsa:hover .text2{
+  opacity: 1;
+}
+
+.item{
+  padding:60px 20px;
+  display: flex;
+}
+
+.itemsa{
+  width:380px;
+  margin-left: 40px;
+}
+
+.dropbtn {
+    background-color: inherit;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    width: auto;
+    color: blue;
+    margin-top: 15px;
+}
+.link:hover{
+  text-decoration: none;
+  background-color: inherit;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: blue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.show {
+  display:block;
+}
+
+.ak_textbox{
+	width: 200px; 
+	font-size: 20px;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.womenitem{
+	margin-top: 20px;
+	height: 500px;
+	width: 304px;
+	margin-left: 30px;
+	text-align: center;
+	font-size: 25px;
+}
+.checked{
+	color: yellow;
+}
+.line{
+	border-right: 1px solid black;
+}
+.photosize{
+	height: 400px;
+	width: 300px;
+}
+</style>
+</head>
+<body>
+
+<div class="container" style="background-image: url(images/back.jpg);width: 100%;">
+<header class="ak_header">
+  <div id="logo" style="font-family:Comic Sans MS;">
+    <a href="index.html"><img src="images/logo.png" alt="logo" style="height:50px;outline: none;" /></a>
+      <div style="margin-top: -40px;margin-left: 70px;color: #00fff5b0;font-size: 25px;"> TECHNOFASHION
+      </div>
+  </div>
+<a href="index.html"><button class="dropbtn">Home</button></a>
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Category</button><i class="fa fa-caret-down" style="margin-left: -13px;color: blue;"></i>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="kid.html">Kid</a>
+  </div>
+</div>
+<a href="about.html"><button class="dropbtn">Aboutus</button></a>
+<a href="login.html" style="float: right;"><button class="dropbtn">Login</button></a>
+<a href="addshop.html" style="float: right;"><button class="dropbtn">AddShop</button></a>
+</header>
+</div>
+<div style="display: flex;">
+	<div class="ak_textbox">
+		Filter<br/>
+		<input type="checkbox" name="T-shirt" value="T-shirt" style="margin-left : 10px;">T-shirt</input><br>
+    <input type="checkbox" name="Top" value="Top" style="margin-left : 10px;">Top</input><br>
+    <input type="checkbox" name="bottom" value="bottom" style="margin-left : 10px;">Bottom</input><br>
+		<input type="checkbox" name="Shirt" value="Shirt" style="margin-left : 10px;">Shirt</input><br><br>
+		Category filter<br>
+		<input type="checkbox" name="casual" value="casual" style="margin-left : 10px;">Casual</input><br>
+    <input type="checkbox" name="Tradistional" value="Tradistional" style="margin-left : 10px;">Tradistional</input><br>
+		<input type="checkbox" name="formal" value="formal" style="margin-left : 10px;">Formal</input><br><br>
+		Size<br>
+		<input type="checkbox" name="s" value="s" style="margin-left : 10px;">S</input><br>
+		<input type="checkbox" name="m" value="m" style="margin-left : 10px;">M</input><br>
+		<input type="checkbox" name="l" value="l" style="margin-left : 10px;">L</input><br>
+		<input type="checkbox" name="xl" value="xl" style="margin-left : 10px;">XL</input><br>
+		<input type="checkbox" name="xxl" value="xxl" style="margin-left : 10px;">XXL</input><br><br>
+		Colour<br>
+		<input type="checkbox" name="s" value="s" style="margin-left : 10px;">Red</input><br>
+		<input type="checkbox" name="m" value="m" style="margin-left : 10px;">Blue</input><br>
+		<input type="checkbox" name="l" value="l" style="margin-left : 10px;">Yellow</input><br>
+		<input type="checkbox" name="xl" value="xl" style="margin-left : 10px;">White</input><br>
+		<input type="checkbox" name="xxl" value="xxl" style="margin-left : 10px;">Black</input><br>
+	</div>
+	 <div class="womenitem">
+		<img src="images/womentredistional.jpg" alt="item1" class="photosize">
+		Womens Formal Dress<br>₹230 <br>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star "></span>
+		<span class="fa fa-star "></span>
+	</div>
+	<div class="womenitem">
+		<img src="images/womenshirt.jpg" alt="item1" class="photosize">
+		Women Shirt<br>₹220 <br>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+	</div>
+	<div class="womenitem">
+		<img src="images/indiawomen.jpg" alt="item1" class="photosize">
+		Women Treadistional<br>₹260 <br>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star "></span>
+	</div>
+</div>
+<div style="display: flex;margin-left: 230px;margin-top: -150px;">
+  	<div class="womenitem">
+  		<img src="images/womenkurti.jpg" alt="item1" class="photosize">
+  		Women Kurti<br>₹280 <br>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star "></span>
+  		<span class="fa fa-star "></span>
+  	</div>
+  	<div class="womenitem">
+  		<img src="images/womentrouser.jpg" alt="item1" class="photosize">
+  		Women Trouser<br>₹200 <br>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  	</div>
+  	<div class="womenitem">
+  		<img src="images/womentshitr.jpg" alt="item1" class="photosize">
+  		Woens T-shirt<br>₹300 <br>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star checked"></span>
+  		<span class="fa fa-star "></span>
+  	</div>
+  </div>
+<div style="margin-top: 20px;">
+  <footer class="footer-distributed">
+        <div class="footer-left">
+          <h3>Technofashion</h3>
+          <p class="footer-links">
+            <a href="index.html">Home</a>
+            ·
+            <a href="aboutus.html">contact us</a>
+          </p>
+        </div>
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p>Vadodara</p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+91 9978394875</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="akshitvaishnav96@gmail.com">akshitvaishnav96@gmail.com</a></p>
+          </div>
+        </div>
+         <div class="footer-right">
+          <p class="footer-company-about">
+            <span>Connect us on</span>
+          <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+  </footer>
+</div>
+</body>
+</html>

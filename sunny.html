@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Demo</title>
+</head>
+
+
+<body background="C:\Users\Revant\Videos\r.jpg" style="background-size: 1280px 672px">
+<table height="250px" width="500px" style="margin:auto;border: solid; border-color: lightgrey; border-radius: 200px 100px;">
+	<tr>
+		<th colspan="2" style="text-shadow: 5px 0px 10px; color: steelblue; font-size: 40;"><text id="login">Add Shop</th>
+	</tr>
+	<tr>
+		<th style="text-align : right; color: lightslategray; font-size: 25;">Shop Name:</th>
+		<th style="text-align : left; padding : 15px"><input id="shopname" 	name="shopn" placeholder="Add your shop name.." style="background-color: inherit"></th>
+	</tr>
+	<tr>
+		<th style="text-align : right; color: lightslategray; font-size: 25;">Shop Holder's Name:</th>
+		<th style="text-align : left; padding : 15px"><input id="shopholder" type="text" name="shop owner" placeholder="Owner's name.." style="background-color: inherit"></th>
+	</tr>
+	<tr>
+		<th style="text-align : right; color: lightslategray; font-size: 25;" id="ids">Mobile number:</th>
+		<th style="text-align : left; padding : 15px"><input id="mobno" type="tel" name="phone" placeholder="Mobile no." style="background-color: inherit"></th>
+	</tr>
+	<tr>
+		<th colspan="2">
+		<input id="Submit" onclick="submitClick()" type="button" value="submit" style="height: 40px; width: 60px; margin-right: 10px; border-radius: 318px 105px; background-color: inherit; color: #cc6565">
+		</th>
+	</tr>
+</table>
+
+
+  Select images: <input type="file" name="img" id="photo"  multiple>
+  <input type="button" onclick="submitImage()" value="submit">
+  
+  <img src="images/kids.png" width="10%" id="pic"/>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDsIk9E7eJhL76t6p7emXe1iJwkIR72590",
+    authDomain: "technofashion-42900.firebaseapp.com",
+    databaseURL: "https://technofashion-42900.firebaseio.com",
+    projectId: "technofashion-42900",
+    storageBucket: "technofashion-42900.appspot.com",
+    messagingSenderId: "767763239852"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+ var database = firebase.database().ref().child("shopinfo");
+ var storage = firebase.app().storage("gs://technofashion-42900.appspot.com");
+ 
+ var storage = firebase.storage();
+
+	const refs = firebase.storage().ref();
+	var ref = refs.child('images');
+
+ 	var shopname;
+	var shopholder;
+	var mob;
+	
+	function submitImage()
+	{
+		const file = document.querySelector('#photo').files[0];
+		const name = (+new Date()) + '-' + file.name;
+		const metadata = { contentType: file.type };
+		const task = ref.child(name).put(file, metadata);
+		
+		task.then((snapshot) => {
+			$('#pic').attr("src",snapshot.downloadURL);
+		});
+	}
+
+	function submitClick(){
+
+	shopname = document.getElementById("shopname").value;
+	shopholder = document.getElementById("shopholder").value;
+	mob = document.getElementById("mobno").value;
+	
+	database.child(shopname).child("shopname").set(shopname);
+	database.child(shopname).child("holder").set(shopholder);
+	database.child(shopname).child("mobie").set(mob);
+	
+	display();
+	}
+	function display()		
+	{
+		database.child(shopname).on("value",snap => {
+				var shop = snap.child('shopname').val();
+				    $("#ids").html("<b>"+shop+"</b>");
+				   
+
+		});
+	/*
+		database.on("value", function(snapshot)
+		{
+			   var obj = snapshot.val();
+			   alert(obj.shopname);  
+		});*/
+		
+	}
+</script>
+
+<!-- <script src="demo.js"></script> -->
+</body>
+</html>
